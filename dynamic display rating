@@ -1,8 +1,14 @@
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+<!-- rating -->
+<td>
+   <div class="rateYo" data-user_id="<?php echo $row["Id"]; ?>" data-rating="<?php echo $row["rating"]; ?>"></div>
+   <span class="hidden_elem"><?php echo $row["Id"]; ?></span>
+   <input type="hidden" id="rating_val" class="rating_val" value="">
+   <div class="text-center"><span id="message_rating-<?php echo $row["Id"]; ?>"></span></div>
+</td>
+
 <script>
 $(document).ready(function(){
 
