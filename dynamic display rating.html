@@ -1,0 +1,40 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+<script>
+$(document).ready(function(){
+
+   function ratingCallback(){
+      $(".rateYo").each(function () {
+      var ratingValue = $(this).data('rating');
+         $(this).rateYo({
+            numStars: 5,       
+            precision: 2,
+            halfStar: true,         
+            starWidth: "30px",      
+            normalFill: "#A0A0A0",  
+            ratedFill: "#E74C3C",   
+            rating    : ratingValue,          
+            spacing   : "5px",      
+            multiColor: {           
+                        "startColor": "#FF0000", //RED
+                        "endColor"  : "#00FF00"  //GREEN
+                        },
+            onSet: function (rating, rateYoInstance) {
+               $('#rating_val').val(rating);
+            },
+         });
+      });
+   }
+
+   ratingCallback();
+
+});
+
+
+
+</script>
+ 
+ 
